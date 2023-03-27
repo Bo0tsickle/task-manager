@@ -17,7 +17,12 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         if(Objects.equals(args[0], "add")) {
-            tasks.add(args[1]);
+            try {
+                tasks.add(args[1]);
+            } catch (ArrayIndexOutOfBoundsException exception) {
+                System.out.println("You didn't enter a title!");
+            }
+
         }
     }
 }
